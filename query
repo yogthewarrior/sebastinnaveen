@@ -12,6 +12,12 @@ query {
  curl -i -H 'Content-Type: application/json' -X POST -d '{"query": "mutation{createMovie(input:{title:\"post\"}){title}}"}' http://localhost:4000/
 
  curl -i -H 'Content-Type: application/json' -d '{"query": "query {allMovies(orderBy:title_ASC){title,actors{name}}}"}' http://localhost:4000/
+ 
+ mutation {
+  createMovie(input:{title:"testing2",actors:"23"})
+  {id,title,actors{name}}
+  }
+  
 
 
 
