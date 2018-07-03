@@ -1,0 +1,19 @@
+type events @rootEntity {     
+      eventName : String
+		eventId  : String
+		imageURL  : String
+		createdBy  : String
+		startDate  : String
+		endDate  : String
+		readMoreContent  : String
+		deliverables  : String
+		faq  : String
+		users : [String]
+}
+
+type users @rootEntity {     
+      userId : String
+		email  : String
+		pwd  : String		
+		status  : String
+}
