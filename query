@@ -1,0 +1,6 @@
+query {
+  allMovies(orderBy:title_ASC){title,actors{name}}
+  }
+  
+
+ mutation {createMovie(input: { title: "post" }) {title}}
