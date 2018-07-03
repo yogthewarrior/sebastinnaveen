@@ -7,5 +7,11 @@ query {
 
 
  mutation {createevents(input: { eventName: "Reactathon" ,eventId  :"1",imageURL:"",createdBy:"admin", startDate:"07-03-2018" ,endDate : "08-03-2018" ,readMoreContent:"", deliverables:"upload your soln in zip file",faq:"",users :["1","2"]    }) {eventName}}
+ 
+ 
+ curl -i -H 'Content-Type: application/json' -X POST -d '{"query": "mutation{createMovie(input:{title:\"post\"}){title}}"}' http://localhost:4000/
+
+ curl -i -H 'Content-Type: application/json' -d '{"query": "query {allMovies(orderBy:title_ASC){title,actors{name}}}"}' http://localhost:4000/
+
 
 
