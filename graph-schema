@@ -1,0 +1,48 @@
+import { Project } from 'cruddl';
+const project = new Project([{
+  name: 'schema.graphqls',
+  body: `
+    type Movie @rootEntity {
+      title: String
+      actors: Actor @relation
+    }
+    type events @rootEntity {     
+      eventName : String
+		eventId  : String
+		imageURL  : String
+		createdBy  : String
+		startDate  : String
+		endDate  : String
+		readMoreContent  : String
+		deliverables  : String
+		faq  : String
+		users : [String]
+}
+
+type users @rootEntity {     
+      userId : String
+		email  : String
+		pwd  : String		
+		status  : String
+}
+    
+    type Actor @rootEntity {
+      name: String
+      movies: Movie @relation(inverseOf: "actors")
+    }`
+}, {
+  name: 'permission-profiles.json',
+  body: JSON.stringify({
+    permissionProfiles: {
+      default: {
+        permissions: [{
+          roles: ['users'],
+          access: 'readWrite'
+        }]
+      }
+    }
+  })
+}]);
+
+ export default project;
+export { project };
