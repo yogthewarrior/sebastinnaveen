@@ -4,3 +4,8 @@ query {
   
 
  mutation {createMovie(input: { title: "post" }) {title}}
+
+
+ mutation {createevents(input: { eventName: "Reactathon" ,eventId  :"1",imageURL:"",createdBy:"admin", startDate:"07-03-2018" ,endDate : "08-03-2018" ,readMoreContent:"", deliverables:"upload your soln in zip file",faq:"",users :["1","2"]    }) {eventName}}
+
+
